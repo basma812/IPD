@@ -30,7 +30,7 @@ namespace trororotururru
             int XXX = int.Parse(perNum.Substring(8, 3));
             int C = int.Parse(perNum.Substring(11, 1));
 
-            //Console.WriteLine("{0},{1},{2},{3},{4}", YYYY, MM, DD, XXX, C);
+            
             bool isAnOKID = ID(YYYY, MM);
             if (isAnOKID)
             {
@@ -46,10 +46,6 @@ namespace trororotururru
                 Console.Write("your ID is Valid and ");
                 Gender(XXX);
             }
-
-
-            //bool thedaysisright = DaysofMonth(DD);
-            
 
             Console.ReadKey();
         }
@@ -105,7 +101,7 @@ namespace trororotururru
         {
             if (XXX % 2 == 0 || XXX == 0)
             {
-                Console.WriteLine(" your gender is a woman"); //checkLuhn(perNum);
+                Console.WriteLine("your gender is a woman"); //checkLuhn(perNum);
 
             }
             else
