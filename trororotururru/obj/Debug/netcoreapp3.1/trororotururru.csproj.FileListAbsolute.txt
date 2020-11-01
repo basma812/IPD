@@ -1,0 +1,13 @@
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.csprojAssemblyReference.cache
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.AssemblyInfoInputs.cache
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.AssemblyInfo.cs
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.csproj.CoreCompileInputs.cache
+C:\Users\basma\source\repos\trororotururru\trororotururru\bin\Debug\netcoreapp3.1\trororotururru.exe
+C:\Users\basma\source\repos\trororotururru\trororotururru\bin\Debug\netcoreapp3.1\trororotururru.deps.json
+C:\Users\basma\source\repos\trororotururru\trororotururru\bin\Debug\netcoreapp3.1\trororotururru.runtimeconfig.json
+C:\Users\basma\source\repos\trororotururru\trororotururru\bin\Debug\netcoreapp3.1\trororotururru.runtimeconfig.dev.json
+C:\Users\basma\source\repos\trororotururru\trororotururru\bin\Debug\netcoreapp3.1\trororotururru.dll
+C:\Users\basma\source\repos\trororotururru\trororotururru\bin\Debug\netcoreapp3.1\trororotururru.pdb
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.dll
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.pdb
+C:\Users\basma\source\repos\trororotururru\trororotururru\obj\Debug\netcoreapp3.1\trororotururru.genruntimeconfig.cache
