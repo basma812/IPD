@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\basma\\source\\repos\\trororotururru\\trororotururru\\trororotururru.csproj",
+      "projectUniqueName": "C:\\Users\\basma\\source\\repos\\IPD2\\trororotururru\\trororotururru.csproj",
       "projectName": "trororotururru",
-      "projectPath": "C:\\Users\\basma\\source\\repos\\trororotururru\\trororotururru\\trororotururru.csproj",
+      "projectPath": "C:\\Users\\basma\\source\\repos\\IPD2\\trororotururru\\trororotururru.csproj",
       "packagesPath": "C:\\Users\\basma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\basma\\source\\repos\\trororotururru\\trororotururru\\obj\\",
+      "outputPath": "C:\\Users\\basma\\source\\repos\\IPD2\\trororotururru\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

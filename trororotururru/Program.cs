@@ -11,6 +11,18 @@ namespace trororotururru
             string perNum;
             // string form for the user input
             perNum = Console.ReadLine();
+            Console.WriteLine("{0}", perNum[6]);
+            string haystack = "0123456789+-";
+            if (haystack.IndexOf(perNum[6]) == -1)
+            {
+                Console.WriteLine("Bad letter {0} in personal ID number", perNum[6]);
+                return;
+            }
+            if (haystack.IndexOf(perNum[8]) == -1)
+            {
+                Console.WriteLine("Bad letter {0} in personal ID number", perNum[6]);
+                return;
+            }
             //replace '+' and '-' with empty space
             perNum = perNum.Replace("+", "");
             perNum = perNum.Replace("-", "");
