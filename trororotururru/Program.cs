@@ -47,10 +47,10 @@ namespace trororotururru
             //Using Luhn algorithm which has it's own method to calculate if the numbers entered are valid
             if (checkLuhn(perNum))
             {
-                Console.WriteLine("Your ID is Not valid by Lunh");
+                Console.WriteLine("Your ID is Not valid by Luhn");
                 return;
             }
-            Console.WriteLine("Your ID is valid by Lunh");
+            Console.WriteLine("Your ID is valid by Luhn");
 
             if (isAnOKID)
             {
