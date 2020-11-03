@@ -15,12 +15,12 @@ namespace trororotururru
             string haystack = "0123456789+-";
             if (haystack.IndexOf(perNum[6]) == -1)
             {
-                Console.WriteLine("Bad letter {0} in personal ID number", perNum[6]);
+                Console.WriteLine("Bad letter {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11} in personal ID number", perNum[0], perNum[1], perNum[2], perNum[3], perNum[4], perNum[5], perNum[6], perNum[7], perNum[8], perNum[9], perNum[10], perNum[11]);
                 return;
             }
             if (haystack.IndexOf(perNum[8]) == -1)
             {
-                Console.WriteLine("Bad letter {0} in personal ID number", perNum[6]);
+                Console.WriteLine("Bad letter {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13} in personal ID number", perNum[0], perNum[1], perNum[2], perNum[3], perNum[4], perNum[5], perNum[6], perNum[7], perNum[8], perNum[9], perNum[10], perNum[11], perNum[12], perNum[13]);
                 return;
             }
             //replace '+' and '-' with empty space
