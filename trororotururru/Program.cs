@@ -45,12 +45,13 @@ namespace trororotururru
             int C = int.Parse(perNum.Substring(11, 1));
 
             // make sure the date is written right in date range
-            bool isAnOKID = ID(YYYY, MM);
+            bool isAnOKID = ID(YYYY);
+            bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
 
             if (isAnOKID)
             {
 
-                isAnOKID = CheckTheDays(DD, YYYY, MM);
+                isAnOKID = CheckCorrect;
             }
             if (isAnOKID)
             {
@@ -63,7 +64,6 @@ namespace trororotururru
                 return;
             }
             Console.WriteLine("Your ID is valid by Luhn");
-
             if (isAnOKID)
             {
                 Console.Write("your ID is Valid and ");
@@ -73,12 +73,73 @@ namespace trororotururru
         }
         // make methods for the form pieces
         //define the range of year and month
-        static bool ID(int YYYY, int MM)
+        static bool ID(int YYYY)
         {
-            int thisYYYY = DateTime.Now.Year;
-            if (YYYY >= 1753 && YYYY <= thisYYYY)
+            
+            if (YYYY >= 1753 && YYYY <= 2020)
             {
-                if (MM >= 0 && MM <= 12)
+                    return true;
+            }
+            else
+            {
+                return false;
+            }
+                
+        }
+        //define the range of the days in the month
+        static bool CheckTheDays(int DD, CheckLeapYear, int MM)
+        {
+            bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
+
+            if (MM < 1 || MM > 12)
+            {
+                Console.WriteLine("Du har angett en felaktig månad. Vänlig försök igen.");
+                
+                if (MM == 2)
+                {
+                    if (DD > 28 || DD < 1)
+                    {
+                        Console.WriteLine("Felaktig dag har angetts. Det är ej skottår. Vänlig försök igen.");
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                if (MM == 2)
+                {
+                    if (DD > 29 || DD < 1)
+                    {
+                        Console.WriteLine("Felaktig dag har angetts. Vänlig försök igen.");
+                        return false;
+                    }
+                }
+
+            }
+            return false;
+        }
+          // Method that checks if a year is a leap year
+        static bool CheckLeapYear(int YYYY)
+        {
+                if (YYYY % 400 == 0)
+                {
+                    return true;
+                }
+                else if (YYYY % 100 == 0)
+                {
+                    return false;
+                }
+                else if (YYYY % 4 == 0)
+                {
+                    return true;
+                }
+        }
+
+            //define the range of the three numbers
+            static bool BirthNum(int XXX)
+            {
+
+                if (XXX >= 000 && XXX <= 999)
                 {
                     return true;
                 }
@@ -87,35 +148,8 @@ namespace trororotururru
                     return false;
                 }
             }
-            else
-                return false;
-        }
-        //define the range of the days in the month, using "DateTime.DaysInMonth" 
-        //DateTime.DaysInMonth returns the numbers of days in specific year and month (works for leap year)
-        static bool CheckTheDays(int DD, int YYYY, int MM)
-        {
-            if (DateTime.DaysInMonth(YYYY, MM) >= DD)
-            {
-                return true;
-            }
-            else
-                return false;
-        }
-        //define the range of the three numbers
-        static bool BirthNum(int XXX)
-        {
-
-            if (XXX >= 000 && XXX <= 999)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        // gender decided by calculating if the three numbers are even or odd
-        static void Gender(int XXX)
+            // gender decided by calculating if the three numbers are even or odd
+            static void Gender(int XXX)
         {
             if (XXX % 2 == 0 || XXX == 0)
             {
@@ -128,27 +162,28 @@ namespace trororotururru
         }
         //the mathematic for Luhn algorithm
         static bool checkLuhn(String perNum)
-        {
-            int nDigits = perNum.Length;
-
-            int nSum = 0;
-            bool isSecond = false;
-            for (int i = nDigits - 1; i >= 0; i--)
             {
-                int d = perNum[i] - '0';
+                int nDigits = perNum.Length;
 
-                if (isSecond == true)
-                    d = d * 2;
+                int nSum = 0;
+                bool isSecond = false;
+                for (int i = nDigits - 1; i >= 0; i--)
+                {
+                    int d = perNum[i] - '0';
 
-                // We add two digits to handle
-                // cases that make two digits 
-                // after doubling
-                nSum += d / 10;
-                nSum += d % 10;
+                    if (isSecond == true)
+                        d = d * 2;
 
-                isSecond = !isSecond;
+                    // We add two digits to handle
+                    // cases that make two digits 
+                    // after doubling
+                    nSum += d / 10;
+                    nSum += d % 10;
+
+                    isSecond = !isSecond;
+                }
+                return (nSum % 10 == 0);
             }
-            return (nSum % 10 == 0);
         }
     }
 }
