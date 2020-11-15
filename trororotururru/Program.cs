@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-
 namespace trororotururru
 {
     class Program
@@ -43,14 +42,17 @@ namespace trororotururru
             int DD = int.Parse(perNum.Substring(6, 2));
             int XXX = int.Parse(perNum.Substring(8, 3));
             int C = int.Parse(perNum.Substring(11, 1));
-
             // make sure the date is written right in date range
             bool isAnOKID = ID(YYYY);
-            bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
-
+            //bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
+            bool checkLeapYear = CheckLeapYear(YYYY);
+            bool CheckCorrect = CheckTheDays(DD, MM);
             if (isAnOKID)
             {
-
+                isAnOKID = checkLeapYear;
+            }
+            if (isAnOKID)
+            {
                 isAnOKID = CheckCorrect;
             }
             if (isAnOKID)
@@ -63,7 +65,10 @@ namespace trororotururru
                 Console.WriteLine("Your ID is Not valid by Luhn");
                 return;
             }
-            Console.WriteLine("Your ID is valid by Luhn");
+            else
+            {
+                Console.WriteLine("Your ID is valid by Luhn");
+            }
             if (isAnOKID)
             {
                 Console.Write("your ID is Valid and ");
@@ -75,26 +80,23 @@ namespace trororotururru
         //define the range of year and month
         static bool ID(int YYYY)
         {
-            
             if (YYYY >= 1753 && YYYY <= 2020)
             {
-                    return true;
+                return true;
             }
             else
             {
+                Console.WriteLine("Year out the rank, introduce a year between 1753 and 2020");
                 return false;
             }
-                
         }
         //define the range of the days in the month
-        static bool CheckTheDays(int DD, CheckLeapYear, int MM)
+        static bool CheckTheDays(int DD, int MM)
         {
-            bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
-
+            //bool CheckCorrect = CheckTheDays(DD, MM);
             if (MM < 1 || MM > 12)
             {
                 Console.WriteLine("Du har angett en felaktig månad. Vänlig försök igen.");
-                
                 if (MM == 2)
                 {
                     if (DD > 28 || DD < 1)
@@ -114,42 +116,66 @@ namespace trororotururru
                         return false;
                     }
                 }
-
             }
             return false;
         }
-          // Method that checks if a year is a leap year
-        static bool CheckLeapYear(int YYYY)
+        //static bool CheckTheDays(int DD, CheckLeapYear, int MM)
+        //{
+        //    bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
+        //    if (MM < 1 || MM > 12)
+        //    {
+        //        Console.WriteLine("Du har angett en felaktig månad. Vänlig försök igen.");
+        //        if (MM == 2)
+        //        {
+        //            if (DD > 28 || DD < 1)
+        //            {
+        //                Console.WriteLine("Felaktig dag har angetts. Det är ej skottår. Vänlig försök igen.");
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (MM == 2)
+        //        {
+        //            if (DD > 29 || DD < 1)
+        //            {
+        //                Console.WriteLine("Felaktig dag har angetts. Vänlig försök igen.");
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    return false;
+        //}
+        // Method that checks if a year is a leap year
+        public static bool CheckLeapYear(int YYYY)
         {
-                if (YYYY % 400 == 0)
-                {
-                    return true;
-                }
-                else if (YYYY % 100 == 0)
-                {
-                    return false;
-                }
-                else if (YYYY % 4 == 0)
-                {
-                    return true;
-                }
-        }
-
-            //define the range of the three numbers
-            static bool BirthNum(int XXX)
+            //if (YYYY % 4 != 0 || (YYYY % 100 == 0 && YYYY % 400 != 0))
+            if (YYYY % 4 == 0 && YYYY % 100 != 0 || YYYY % 400 == 0)
             {
-
-                if (XXX >= 000 && XXX <= 999)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                Console.WriteLine("Det är skottår");
+                return true;
             }
-            // gender decided by calculating if the three numbers are even or odd
-            static void Gender(int XXX)
+            else
+            {
+                Console.WriteLine("Det är ej skottår");
+                return false;
+            }
+        }
+        //define the range of the three numbers
+        static bool BirthNum(int XXX)
+        {
+            if (XXX >= 000 && XXX <= 999)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        // gender decided by calculating if the three numbers are even or odd
+        static void Gender(int XXX)
         {
             if (XXX % 2 == 0 || XXX == 0)
             {
@@ -162,28 +188,23 @@ namespace trororotururru
         }
         //the mathematic for Luhn algorithm
         static bool checkLuhn(String perNum)
+        {
+            int nDigits = perNum.Length;
+            int nSum = 0;
+            bool isSecond = false;
+            for (int i = nDigits - 1; i >= 0; i--)
             {
-                int nDigits = perNum.Length;
-
-                int nSum = 0;
-                bool isSecond = false;
-                for (int i = nDigits - 1; i >= 0; i--)
-                {
-                    int d = perNum[i] - '0';
-
-                    if (isSecond == true)
-                        d = d * 2;
-
-                    // We add two digits to handle
-                    // cases that make two digits 
-                    // after doubling
-                    nSum += d / 10;
-                    nSum += d % 10;
-
-                    isSecond = !isSecond;
-                }
-                return (nSum % 10 == 0);
+                int d = perNum[i] - '0';
+                if (isSecond == true)
+                    d = d * 2;
+                // We add two digits to handle
+                // cases that make two digits
+                // after doubling
+                nSum += d / 10;
+                nSum += d % 10;
+                isSecond = !isSecond;
             }
+            return (nSum % 10 == 0);
         }
     }
 }
