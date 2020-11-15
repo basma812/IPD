@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\basma\\Source\\Repos\\IPD\\trororotururru\\trororotururru.csproj": {}
+    "C:\\Users\\basma\\source\\repos\\IPD\\trororotururru\\trororotururru.csproj": {}
   },
   "projects": {
-    "C:\\Users\\basma\\Source\\Repos\\IPD\\trororotururru\\trororotururru.csproj": {
+    "C:\\Users\\basma\\source\\repos\\IPD\\trororotururru\\trororotururru.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\basma\\Source\\Repos\\IPD\\trororotururru\\trororotururru.csproj",
+        "projectUniqueName": "C:\\Users\\basma\\source\\repos\\IPD\\trororotururru\\trororotururru.csproj",
         "projectName": "trororotururru",
-        "projectPath": "C:\\Users\\basma\\Source\\Repos\\IPD\\trororotururru\\trororotururru.csproj",
+        "projectPath": "C:\\Users\\basma\\source\\repos\\IPD\\trororotururru\\trororotururru.csproj",
         "packagesPath": "C:\\Users\\basma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\basma\\Source\\Repos\\IPD\\trororotururru\\obj\\",
+        "outputPath": "C:\\Users\\basma\\source\\repos\\IPD\\trororotururru\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

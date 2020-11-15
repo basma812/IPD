@@ -86,7 +86,7 @@ namespace trororotururru
             }
             else
             {
-                Console.WriteLine("Year out the rank, introduce a year between 1753 and 2020");
+                Console.WriteLine("Year out the range, enter a year between 1753 and 2020");
                 return false;
             }
         }
@@ -96,12 +96,12 @@ namespace trororotururru
             //bool CheckCorrect = CheckTheDays(DD, MM);
             if (MM < 1 || MM > 12)
             {
-                Console.WriteLine("Du har angett en felaktig månad. Vänlig försök igen.");
+                Console.WriteLine("You have entered an incorrect month. Please try again.");
                 if (MM == 2)
                 {
                     if (DD > 28 || DD < 1)
                     {
-                        Console.WriteLine("Felaktig dag har angetts. Det är ej skottår. Vänlig försök igen.");
+                        Console.WriteLine("Incorrect day entered. It's not leap year. Please try again.");
                         return false;
                     }
                 }
@@ -112,53 +112,24 @@ namespace trororotururru
                 {
                     if (DD > 29 || DD < 1)
                     {
-                        Console.WriteLine("Felaktig dag har angetts. Vänlig försök igen.");
+                        Console.WriteLine("Incorrect day entered. Please try again.");
                         return false;
                     }
                 }
             }
             return false;
         }
-        //static bool CheckTheDays(int DD, CheckLeapYear, int MM)
-        //{
-        //    bool CheckCorrect = CheckTheDays(DD, CheckLeapYear, MM);
-        //    if (MM < 1 || MM > 12)
-        //    {
-        //        Console.WriteLine("Du har angett en felaktig månad. Vänlig försök igen.");
-        //        if (MM == 2)
-        //        {
-        //            if (DD > 28 || DD < 1)
-        //            {
-        //                Console.WriteLine("Felaktig dag har angetts. Det är ej skottår. Vänlig försök igen.");
-        //                return false;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (MM == 2)
-        //        {
-        //            if (DD > 29 || DD < 1)
-        //            {
-        //                Console.WriteLine("Felaktig dag har angetts. Vänlig försök igen.");
-        //                return false;
-        //            }
-        //        }
-        //    }
-        //    return false;
-        //}
-        // Method that checks if a year is a leap year
+        //leap year method to check if the date would make a leap year or not
         public static bool CheckLeapYear(int YYYY)
         {
-            //if (YYYY % 4 != 0 || (YYYY % 100 == 0 && YYYY % 400 != 0))
             if (YYYY % 4 == 0 && YYYY % 100 != 0 || YYYY % 400 == 0)
             {
-                Console.WriteLine("Det är skottår");
+                Console.WriteLine("It's leap year");
                 return true;
             }
             else
             {
-                Console.WriteLine("Det är ej skottår");
+                Console.WriteLine("It's not leap year");
                 return false;
             }
         }
@@ -179,7 +150,7 @@ namespace trororotururru
         {
             if (XXX % 2 == 0 || XXX == 0)
             {
-                Console.WriteLine(" your gender is a woman");
+                Console.WriteLine("your gender is a woman");
             }
             else
             {
